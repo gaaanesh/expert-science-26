@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import {
   AudienceHero,
-  PathwayExplorer,
   ScienceLab,
+  PathwayExplorer,
   CuriosityQuiz,
   DemoRequest,
 } from "./components/Home/JourneyInteractions";
@@ -14,6 +14,12 @@ import {
   verifiedResults,
 } from "./components/Home/academy-content";
 import "./journey.css";
+import "./story.css";
+import Image from "next/image";
+import { StudentCharacter } from "./components/Story/StudentCharacter";
+import { ScienceExperiment } from "./components/Story/ScienceExperiment";
+import { LearningJourney } from "./components/Story/LearningJourney";
+import { ParentProgress } from "./components/Story/ParentProgress";
 export const metadata: Metadata = {
   title:
     "11th & 12th Science, JEE, NEET & MHT-CET Coaching | Expert Science Academy",
@@ -58,10 +64,10 @@ export default function Home() {
           className="academy-brand"
           aria-label="Expert Science Academy home"
         >
-          <img
+          <Image
             src={`${basePath}/images/logo/Expert-Science-Academy-Logo.svg`}
-            width="205"
-            height="50"
+            width={205}
+            height={50}
             alt="Expert Science Academy"
           />
         </a>
@@ -73,7 +79,7 @@ export default function Home() {
           ))}
         </nav>
         <a className="button primary header-demo" href="#begin">
-          Request a demo ↗
+          Book a free demo ↗
         </a>
         <details className="mobile-menu">
           <summary>Menu</summary>
@@ -83,121 +89,186 @@ export default function Home() {
                 {title}
               </a>
             ))}
-            <a href="#begin">Request a demo</a>
+            <a href="#begin">Book a free demo</a>
           </nav>
         </details>
       </header>
       <main id="main">
         <section className="hero chapter">
+          <p className="academy-context">
+            EXPERT SCIENCE ACADEMY <span>MUMBAI · SINCE 2003</span>
+          </p>
           <div className="hero-layout">
             <div>
-              <p className="eyebrow">01 / Discover · Expert Science Academy</p>
+              <p className="eyebrow">CHAPTER 01 / A NEW BEGINNING</p>
+              <p className="hero-course-context">
+                Class 11 &amp; 12 Science · HSC, JEE, NEET &amp; MHT-CET
+              </p>
               <AudienceHero />
             </div>
-            <div
-              className="curiosity-art"
-              aria-label="Science connects questions to possibilities"
-              role="img"
-            >
-              <div className="art-label">THE WORLD STARTS WITH A QUESTION</div>
-              <svg viewBox="0 0 440 400" aria-hidden="true">
-                <defs>
-                  <pattern
-                    id="hero-grid"
-                    width="24"
-                    height="24"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <path
-                      d="M24 0H0V24"
-                      stroke="#1a56db"
-                      opacity=".12"
-                      fill="none"
-                    />
-                  </pattern>
-                </defs>
-                <rect width="440" height="400" fill="url(#hero-grid)" />
-                <circle
-                  cx="220"
-                  cy="190"
-                  r="125"
-                  fill="none"
-                  stroke="#1a56db"
-                  opacity=".25"
-                />
-                <circle
-                  cx="220"
-                  cy="190"
-                  r="80"
-                  fill="none"
-                  stroke="#1a56db"
-                  opacity=".25"
-                />
-                <ellipse
-                  className="orbit"
-                  cx="220"
-                  cy="190"
-                  rx="170"
-                  ry="65"
-                  fill="none"
-                  stroke="#1a56db"
-                  strokeWidth="1.5"
-                  transform="rotate(-35 220 190)"
-                />
-                <path
-                  d="M30 190Q80 80 130 190T230 190T330 190T430 190"
-                  fill="none"
-                  stroke="#356d5d"
-                  strokeWidth="2"
-                />
-                <circle cx="220" cy="190" r="49" fill="#172554" />
-                <text
-                  x="220"
-                  y="211"
-                  fill="white"
-                  fontFamily="Georgia,serif"
-                  fontSize="68"
-                  textAnchor="middle"
-                >
-                  ?
-                </text>
-                <circle cx="348" cy="101" r="9" fill="#e11d48" />
-                <circle cx="105" cy="276" r="6" fill="#1a56db" />
-                <text x="35" y="44" fill="#172554" fontSize="13">
-                  OBSERVE
-                </text>
-                <text x="315" y="360" fill="#172554" fontSize="13">
-                  DISCOVER
-                </text>
-              </svg>
-              <div className="art-caption">
-                <span>Physics / Chemistry</span>
-                <span>Maths / Biology</span>
-              </div>
-            </div>
+            <StudentCharacter hero />
           </div>
           <div className="hero-strip">
-            <strong>Science coaching in Asalpha & Ghatkopar West</strong>
-            <span>Class 11 & 12</span>
-            <span>HSC · JEE · NEET · MHT-CET</span>
+            <strong>Your Curiosity. Your Journey. Your Future.</strong>
+            <span>Class 11 & 12 · Maharashtra HSC</span>
+            <span>JEE · NEET · MHT-CET</span>
           </div>
         </section>
-        <section id="explore" className="chapter">
-          <div className="section-heading">
+        <nav className="chapter-index chapter" aria-label="The student journey">
+          <span>EVERY DREAM HAS A STARTING POINT</span>
+          <a href="#experience">01 Understand</a>
+          <a href="#grow">02 Practise</a>
+          <a href="#belong">03 Find support</a>
+          <a href="#explore">04 Look ahead</a>
+        </nav>
+        <section id="experience" className="chapter breakthrough">
+          <div className="section-heading story-reveal">
             <div>
-              <p className="eyebrow">02 / Explore</p>
+              <p className="eyebrow">CHAPTER 02 / THE FIRST BREAKTHROUGH</p>
               <h2>
-                There is more than
+                Sometimes, one good explanation
                 <br />
-                <em>one way forward.</em>
+                <em>changes everything.</em>
               </h2>
             </div>
             <p>
-              Start with what interests you. Explore possible study routes, then
-              ask the questions that help you choose.
+              A question asked out loud. An idea drawn on the board. That moment
+              when a difficult topic starts to make sense.
             </p>
           </div>
+          <figure className="classroom-scene">
+            <picture>
+              <source
+                media="(max-width: 700px)"
+                srcSet={`${basePath}/images/story/classroom-640.webp`}
+              />
+              <Image
+                src={`${basePath}/images/story/classroom-1280.webp`}
+                width={1280}
+                height={960}
+                sizes="(max-width: 700px) 90vw, 1200px"
+                alt="Illustrative Indian science classroom: a teacher listens as a student raises a hand."
+              />
+            </picture>
+            <div className="classroom-caption">
+              <span>“Can you explain that once more?”</span>
+              <p>That is a good place to begin.</p>
+            </div>
+            <figcaption>
+              AI-generated classroom illustration. Not a photograph of our
+              premises, faculty or students.
+            </figcaption>
+          </figure>
+          <ScienceExperiment />
+          <details className="extra-science">
+            <summary>Keep exploring: Chemistry, Maths & Biology</summary>
+            <ScienceLab />
+          </details>
+        </section>
+        <section id="grow" className="chapter practice-chapter">
+          <div className="section-heading story-reveal">
+            <div>
+              <p className="eyebrow">CHAPTER 03 / LEARNING TAKES PRACTICE</p>
+              <h2>
+                Understanding is the beginning.
+                <br />
+                <em>Practice builds confidence.</em>
+              </h2>
+            </div>
+            <p>
+              You will not get every answer right the first time. Notice the
+              mistake, ask a question and give yourself another try.
+            </p>
+          </div>
+          <div className="practice-layout">
+            <LearningJourney />
+            <div className="practice-question">
+              <p className="handwritten">Your turn. No marks, no pressure.</p>
+              <CuriosityQuiz />
+            </div>
+          </div>
+        </section>
+        <div className="parent-band">
+          <section id="belong" className="chapter">
+            <div className="section-heading story-reveal">
+              <div>
+                <p className="eyebrow">CHAPTER 04 / A SUPPORT SYSTEM</p>
+                <h2>
+                  Progress should be visible,
+                  <br />
+                  <em>not just promised.</em>
+                </h2>
+              </div>
+              <p>
+                For families, clarity matters. Understand how learning, feedback
+                and communication fit together before choosing a batch.
+              </p>
+            </div>
+            <ParentProgress />
+            {faculty.length > 0 && (
+              <div className="course-grid">
+                {faculty.map((person) => (
+                  <article key={person.name}>
+                    <h3>{person.name}</h3>
+                    <p>
+                      {person.subject} · {person.qualification}
+                    </p>
+                    <p>{person.description}</p>
+                  </article>
+                ))}
+              </div>
+            )}
+            {verifiedResults.length > 0 && (
+              <div>
+                {verifiedResults.map((result) => (
+                  <article key={`${result.name}-${result.exam}-${result.year}`}>
+                    <h3>{result.name}</h3>
+                    <p>
+                      {result.exam} · {result.year} · {result.value}{" "}
+                      {result.metric}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            )}
+          </section>
+        </div>
+        <section id="explore" className="chapter future-chapter">
+          <div className="future-intro">
+            <div>
+              <p className="eyebrow">
+                CHAPTER 05 / YOUR FUTURE HAS POSSIBILITIES
+              </p>
+              <h2>
+                Science is a beginning.
+                <br />
+                <em>Not a single destination.</em>
+              </h2>
+              <p>
+                You do not need to have your whole life planned at sixteen.
+                <br />
+                Start with what interests you. See where it could lead.
+              </p>
+            </div>
+            <StudentCharacter />
+          </div>
           <PathwayExplorer />
+        </section>
+        <section className="chapter final-chapter">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">CHAPTER 06 / YOUR JOURNEY STARTS HERE</p>
+              <h2>
+                The next chapter
+                <br />
+                <em>is yours.</em>
+              </h2>
+            </div>
+            <p>
+              From a first question to a more informed choice. Explore the
+              courses and meet the people you could learn with.
+            </p>
+          </div>
           <div id="courses" className="course-heading">
             <h3>Find a course for your next chapter.</h3>
             <p>
@@ -219,138 +290,6 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </section>
-        <section id="experience" className="chapter experience">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">03 / Experience</p>
-              <h2>
-                Less “learn it by heart”.
-                <br />
-                <em>More “now I see it”.</em>
-              </h2>
-            </div>
-            <p>
-              Move a slider. Follow a curve. Ask why. Try these small science
-              explorations at your own pace.
-            </p>
-          </div>
-          <div className="experience-grid">
-            <ScienceLab />
-            <CuriosityQuiz />
-          </div>
-        </section>
-        <section id="grow" className="chapter">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">04 / Grow</p>
-              <h2>
-                Understanding grows.
-                <br />
-                <em>One step at a time.</em>
-              </h2>
-            </div>
-            <p>
-              A useful study rhythm connects concepts, practice and feedback.
-              Discuss how your selected batch supports each step.
-            </p>
-          </div>
-          <ol className="learning-rhythm">
-            {[
-              [
-                "Understand",
-                "Start with the concept. Ask what it means, where it applies and why it works.",
-              ],
-              [
-                "Practise",
-                "Work through problems and written answers. Notice where your understanding becomes uncertain.",
-              ],
-              [
-                "Review",
-                "Use feedback to identify mistakes. Separate a missing concept from a calculation or reading error.",
-              ],
-              [
-                "Improve",
-                "Return to the difficult parts, try again and build a revision routine you can maintain.",
-              ],
-            ].map(([title, text], i) => (
-              <li key={title}>
-                <span>0{i + 1}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </li>
-            ))}
-          </ol>
-          {verifiedResults.length > 0 && (
-            <div id="results">
-              <h3>Documented student outcomes</h3>
-              <div className="course-grid">
-                {verifiedResults.map((result) => (
-                  <article
-                    key={`${result.name}-${result.exam}-${result.year}`}
-                    className="course-card"
-                  >
-                    <h4>{result.name}</h4>
-                    <p>
-                      {result.exam} · {result.year}
-                    </p>
-                    <strong>
-                      {result.value} {result.metric}
-                    </strong>
-                  </article>
-                ))}
-              </div>
-            </div>
-          )}
-        </section>
-        <section id="belong" className="chapter belong">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">05 / Belong</p>
-              <h2>
-                Your questions deserve
-                <br />
-                <em>a conversation.</em>
-              </h2>
-            </div>
-            <p>
-              Choosing coaching is also choosing the people you will learn with.
-              Use a demo visit to discuss the teaching approach and decide
-              whether it fits.
-            </p>
-          </div>
-          <div className="meet-grid">
-            <div className="meet-intro">
-              <span className="eyebrow">Meet the academy</span>
-              <h3>
-                Bring your questions.
-                <br />
-                Meet your teachers.
-              </h3>
-              <a className="text-link" href="#begin">
-                Arrange a demo visit ↗
-              </a>
-            </div>
-            <ul className="visit-questions">
-              <li>Who will teach each subject in my batch?</li>
-              <li>How are doubts and missed topics addressed?</li>
-              <li>How do written tests and entrance practice fit together?</li>
-              <li>How can students and parents discuss progress?</li>
-            </ul>
-          </div>
-          {faculty.length > 0 && (
-            <div className="course-grid">
-              {faculty.map((person) => (
-                <article className="course-card" key={person.name}>
-                  <h3>{person.name}</h3>
-                  <strong>
-                    {person.subject} · {person.qualification}
-                  </strong>
-                  <p>{person.description}</p>
-                </article>
-              ))}
-            </div>
-          )}
           <div id="centres" className="course-heading">
             <h3>Find your local Expert Science Academy centre.</h3>
             <p>
@@ -382,25 +321,29 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </section>
-        <section id="begin" className="chapter begin">
-          <div>
-            <p className="eyebrow">06 / Begin</p>
-            <h2>
-              Your next chapter
-              <br />
-              <em>starts with a question.</em>
-            </h2>
-            <p>
-              Explore a class before making your decision. Choose a centre and
-              course to request a demo on WhatsApp.
-            </p>
-            <p>
-              The centre will confirm the date, time and demo terms. You can ask
-              about fees, faculty and the timetable in the same conversation.
-            </p>
+          <div id="begin" className="begin story-booking">
+            <div>
+              <p className="eyebrow">LET’S START WITH A CONVERSATION</p>
+              <h2>
+                Come with questions.
+                <br />
+                <em>Leave with a clearer idea.</em>
+              </h2>
+              <p>
+                Request a demo at your nearest centre. Ask about your subjects,
+                the timetable, faculty and fees before you decide.
+              </p>
+              <p>
+                The centre will confirm the date, availability and demo terms on
+                WhatsApp.
+              </p>
+              <div className="closing-student">
+                <StudentCharacter />
+                <span>Your curiosity belongs here.</span>
+              </div>
+            </div>
+            <DemoRequest />
           </div>
-          <DemoRequest />
         </section>
         <section className="chapter faq">
           <div>
@@ -426,7 +369,7 @@ export default function Home() {
         <div className="actions">
           <a href="#courses">Courses</a>
           <a href="#centres">Centres & contact</a>
-          <a href="#begin">Request a demo</a>
+          <a href="#begin">Book a free demo</a>
         </div>
         <p className="fine-print">
           This page does not collect quiz answers or demo-form selections.

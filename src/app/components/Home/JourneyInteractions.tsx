@@ -33,23 +33,24 @@ export function AudienceHero() {
         ))}
       </fieldset>
       <h1>
-        Your Curiosity.
-        <br />
-        Your Journey.
-        <br />
-        <em>Your Future.</em>
+        You don’t have to
+        <br className="desktop-break" /> be a topper{" "}
+        <br className="desktop-break" /> <em>to dream big.</em>
       </h1>
       <p className="hero-description" aria-live="polite">
         {audience === "student"
-          ? "Big questions start here. Explore science, discover your options and take your next step with confidence."
-          : "Help your child make an informed next step. Explore courses, discuss learning support and meet the academy before deciding."}
+          ? "Class 11 brings new subjects, bigger questions and a world of possibilities. Start with curiosity. Build understanding, one concept at a time."
+          : "A big step for your child. An important decision for you. Explore the courses, meet the teachers and ask about learning support before you decide."}
       </p>
       <div className="actions">
         <a className="button primary" href="#begin">
-          Request a demo <span aria-hidden="true">↗</span>
+          Book a free demo <span aria-hidden="true">↗</span>
         </a>
-        <a className="text-link" href="#explore">
-          Explore your path <span aria-hidden="true">↓</span>
+        <a
+          className="text-link"
+          href={audience === "parent" ? "#belong" : "#experience"}
+        >
+          Explore our approach <span aria-hidden="true">↓</span>
         </a>
       </div>
     </div>
@@ -90,12 +91,23 @@ const pathways = [
     sourceName: "Maharashtra CET information",
   },
   {
+    id: "research",
+    label: "Ask new questions",
+    title: "Research & the sciences",
+    subjects: "PCM / PCB, depending on the discipline",
+    description:
+      "Explore a BSc or integrated science degree, followed by specialised study and research. Physics, chemistry, mathematics and life sciences each open different questions to investigate. Admission routes vary by institution.",
+    course: "HSC Science; discuss entrance preparation separately",
+    source: "https://www.iiseradmission.in/",
+    sourceName: "IISER admissions information",
+  },
+  {
     id: "unsure",
     label: "Still exploring",
-    title: "You do not need every answer yet.",
+    title: "More possibilities. Time to explore.",
     subjects: "Start with subjects you enjoy",
     description:
-      "Bring your interests and questions to a teacher. Compare the work involved in PCM, PCB and PCMB, then investigate degree requirements. More subjects do not automatically mean a better fit.",
+      "Explore environmental science, statistics, agriculture and allied health alongside other interests. Each degree has its own subject and entrance requirements. Bring your questions to a teacher before choosing PCM, PCB or PCMB.",
     course: "11th Science",
     source: "https://cetcell.mahacet.org/cet-3/",
     sourceName: "Explore official CET information",
@@ -387,11 +399,11 @@ export function ScienceLab() {
 const questions = [
   {
     question:
-      "A wave becomes taller while the distance between its crests stays the same. What increased?",
-    options: ["Amplitude", "Wavelength", "Neither"],
+      "At the same gravity, a pendulum’s length increases from 0.5 m to 2 m. Its period approximately…",
+    options: ["Doubles", "Quadruples", "Stays the same"],
     answer: 0,
     explanation:
-      "Amplitude is the maximum displacement from the resting position. Wavelength is the distance between successive crests.",
+      "For small swings, period is proportional to the square root of length. Four times the length gives twice the period.",
   },
   {
     question: "How many atoms are in one water molecule, H₂O?",
@@ -426,8 +438,8 @@ export function CuriosityQuiz() {
           {score} of 3 correct. Keep asking why.
         </h3>
         <p>
-          You explored wave amplitude, molecules and squaring numbers. This
-          short activity does not assess exam readiness.
+          You explored pendulums, molecules and squaring numbers. This short
+          activity does not assess exam readiness.
         </p>
         <button
           onClick={() => {

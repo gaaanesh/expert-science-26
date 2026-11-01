@@ -1,5 +1,7 @@
 # Homepage content and SEO review
 
+For the newer character-led redesign and current verification results, see [story-redesign.md](story-redesign.md). The verification below describes the initial homepage revision.
+
 The homepage replaces unsupported outcome promises, invented urgency, inconsistent batch caps, outdated dates, ambiguous score labels and inaccurate NEET weighting. No results or named faculty profiles publish until evidence is supplied. Existing course offerings and contact details are retained from repository content; they still require academy review before launch.
 
 ## Launch content checklist
