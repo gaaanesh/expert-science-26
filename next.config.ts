@@ -1,6 +1,6 @@
 import type { NextConfig } from 'next'
 
-const basePath = '/expert-science';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '/expert-science';
 // const basePath = '/si-education';
 
 const nextConfig: NextConfig = {
